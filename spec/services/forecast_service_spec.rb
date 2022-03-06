@@ -43,7 +43,20 @@ RSpec.describe 'Forecast Service' do
       expect(nyc_weather)
     end
   end
-  
+
+  context 'sad path - external APIs down' do
+    it "returns message if there's an external API outage" do
+      allow(ForecastService).to receive(:maps_connection).and_return(double(Faraday::Response, status: 500, success?: false))
+
+      expect(ForecastService.geocoding_data('Pittsburgh,pa')).to eq('Unable to access MapQuest Geocoding API.')
+    end
+
+    it "returns message if there's an external API outage" do
+      allow(ForecastService).to receive(:weather_connection).and_return(double(Faraday::Response, status: 500, success?: false))
+
+      expect(ForecastService.forecast_data('Pittsburgh,pa')).to eq('Unable to access OpenWeather API.')
+    end
+  end
 end
 
 # {
