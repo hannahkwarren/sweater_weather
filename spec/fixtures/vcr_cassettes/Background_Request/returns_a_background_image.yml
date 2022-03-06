@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=SzHfgEcBUyOX80kXtsL5mTUjG6skofqSCk3DbW-oiLg&orientation=landscape&per_page=1&query=Baltimore,MD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1149'
+      Server:
+      - Cowboy
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      X-Unsplash-Version:
+      - v1
+      Warning:
+      - The tags property in this endpoint is deprecated. https://changelog.unsplash.com/deprecations/2021/07/12/tags-search-deprecation.html
+      Link:
+      - <https://api.unsplash.com/search/photos?client_id=SzHfgEcBUyOX80kXtsL5mTUjG6skofqSCk3DbW-oiLg&orientation=landscape&page=456&per_page=1&query=Baltimore%2CMD>;
+        rel="last", <https://api.unsplash.com/search/photos?client_id=SzHfgEcBUyOX80kXtsL5mTUjG6skofqSCk3DbW-oiLg&orientation=landscape&page=2&per_page=1&query=Baltimore%2CMD>;
+        rel="next"
+      X-Total:
+      - '456'
+      X-Per-Page:
+      - '1'
+      Content-Language:
+      - en
+      Etag:
+      - W/"a698f9d2c904c6fef10f0a521f227d67"
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Request-Id:
+      - 23373e46-0dc9-4216-b8b0-e514e93894f2
+      X-Runtime:
+      - '0.086383'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 06 Mar 2022 22:09:58 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-iad-kcgs7200133-IAD, cache-ewr18129-EWR
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1646604599.826875,VS0,VE103
+      Vary:
+      - Accept-Encoding, Origin,Authorization,Accept-Language,client-geo-region,Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":456,"total_pages":456,"results":[{"id":"CTSDsj_hbu8","created_at":"2022-01-15T11:23:39-05:00","updated_at":"2022-03-05T23:27:34-05:00","promoted_at":null,"width":5654,"height":3898,"color":"#c0c0c0","blur_hash":"LHHC1R-;IU~qWBM{IUof~qj[M{Rj","description":"Street
+        photography in Baltimore, MD.  Photo was made from scanned 35mm film.","alt_description":null,"urls":{"raw":"https://images.unsplash.com/photo-1642263814576-a6e68dfc4ded?ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxCYWx0aW1vcmUlMkNNRHxlbnwwfDB8fHwxNjQ2NjA0NTk4\u0026ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1642263814576-a6e68dfc4ded?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxCYWx0aW1vcmUlMkNNRHxlbnwwfDB8fHwxNjQ2NjA0NTk4\u0026ixlib=rb-1.2.1\u0026q=85","regular":"https://images.unsplash.com/photo-1642263814576-a6e68dfc4ded?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxCYWx0aW1vcmUlMkNNRHxlbnwwfDB8fHwxNjQ2NjA0NTk4\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080","small":"https://images.unsplash.com/photo-1642263814576-a6e68dfc4ded?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxCYWx0aW1vcmUlMkNNRHxlbnwwfDB8fHwxNjQ2NjA0NTk4\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=400","thumb":"https://images.unsplash.com/photo-1642263814576-a6e68dfc4ded?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxCYWx0aW1vcmUlMkNNRHxlbnwwfDB8fHwxNjQ2NjA0NTk4\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=200","small_s3":"https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1642263814576-a6e68dfc4ded"},"links":{"self":"https://api.unsplash.com/photos/CTSDsj_hbu8","html":"https://unsplash.com/photos/CTSDsj_hbu8","download":"https://unsplash.com/photos/CTSDsj_hbu8/download?ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxCYWx0aW1vcmUlMkNNRHxlbnwwfDB8fHwxNjQ2NjA0NTk4","download_location":"https://api.unsplash.com/photos/CTSDsj_hbu8/download?ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxCYWx0aW1vcmUlMkNNRHxlbnwwfDB8fHwxNjQ2NjA0NTk4"},"categories":[],"likes":1,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"topic_submissions":{"people":{"status":"rejected"},"film":{"status":"rejected"},"street-photography":{"status":"rejected"}},"user":{"id":"HurCejnoIt0","updated_at":"2022-03-06T15:16:34-05:00","username":"rwlinder","name":"Robert
+        Linder","first_name":"Robert","last_name":"Linder","twitter_username":null,"portfolio_url":null,"bio":"I
+        have been taking pictures for my own entertainment for more than 60 years.  Hope
+        you enjoy looking at a few of them.","location":null,"links":{"self":"https://api.unsplash.com/users/rwlinder","html":"https://unsplash.com/@rwlinder","photos":"https://api.unsplash.com/users/rwlinder/photos","likes":"https://api.unsplash.com/users/rwlinder/likes","portfolio":"https://api.unsplash.com/users/rwlinder/portfolio","following":"https://api.unsplash.com/users/rwlinder/following","followers":"https://api.unsplash.com/users/rwlinder/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1642008724390-2cd480e88f85image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-1642008724390-2cd480e88f85image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-1642008724390-2cd480e88f85image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":null,"total_collections":11,"total_likes":0,"total_photos":621,"accepted_tos":true,"for_hire":false,"social":{"instagram_username":null,"portfolio_url":null,"twitter_username":null,"paypal_email":null}},"tags":[{"type":"search","title":"baltimore"},{"type":"search","title":"md"},{"type":"search","title":"usa"}]}]}'
+  recorded_at: Sun, 06 Mar 2022 22:09:58 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=SzHfgEcBUyOX80kXtsL5mTUjG6skofqSCk3DbW-oiLg&orientation=landscape&per_page=1&query=Chicago,IL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1731'
+      Server:
+      - Cowboy
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      X-Unsplash-Version:
+      - v1
+      Warning:
+      - The tags property in this endpoint is deprecated. https://changelog.unsplash.com/deprecations/2021/07/12/tags-search-deprecation.html
+      Link:
+      - <https://api.unsplash.com/search/photos?client_id=SzHfgEcBUyOX80kXtsL5mTUjG6skofqSCk3DbW-oiLg&orientation=landscape&page=2830&per_page=1&query=Chicago%2CIL>;
+        rel="last", <https://api.unsplash.com/search/photos?client_id=SzHfgEcBUyOX80kXtsL5mTUjG6skofqSCk3DbW-oiLg&orientation=landscape&page=2&per_page=1&query=Chicago%2CIL>;
+        rel="next"
+      X-Total:
+      - '2830'
+      X-Per-Page:
+      - '1'
+      Content-Language:
+      - en
+      Etag:
+      - W/"174763f2ef98781e6fb8da7de912da5f"
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Request-Id:
+      - f543d7bb-d063-4c4c-aaf0-eea97923b5be
+      X-Runtime:
+      - '0.106764'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 06 Mar 2022 21:33:31 GMT
+      Age:
+      - '900'
+      X-Served-By:
+      - cache-iad-kcgs7200157-IAD, cache-ewr18153-EWR
+      X-Cache:
+      - MISS, HIT
+      X-Cache-Hits:
+      - 0, 2
+      X-Timer:
+      - S1646602411.185191,VS0,VE0
+      Vary:
+      - Accept-Encoding, Origin,Authorization,Accept-Language,client-geo-region,Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":2830,"total_pages":2830,"results":[{"id":"KMRFPukZxPU","created_at":"2020-10-09T16:52:55-04:00","updated_at":"2022-03-05T18:17:12-05:00","promoted_at":null,"width":4592,"height":2584,"color":"#a6a6a6","blur_hash":"L2HB-,?]zo:gGJn2E3^gR-E1%3IV","description":null,"alt_description":"white
+        and brown concrete building","urls":{"raw":"https://images.unsplash.com/photo-1602276507033-1bcec514e1ef?ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxDaGljYWdvJTJDSUx8ZW58MHwwfHx8MTY0NjYwMTUxMg\u0026ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1602276507033-1bcec514e1ef?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxDaGljYWdvJTJDSUx8ZW58MHwwfHx8MTY0NjYwMTUxMg\u0026ixlib=rb-1.2.1\u0026q=85","regular":"https://images.unsplash.com/photo-1602276507033-1bcec514e1ef?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxDaGljYWdvJTJDSUx8ZW58MHwwfHx8MTY0NjYwMTUxMg\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080","small":"https://images.unsplash.com/photo-1602276507033-1bcec514e1ef?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxDaGljYWdvJTJDSUx8ZW58MHwwfHx8MTY0NjYwMTUxMg\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=400","thumb":"https://images.unsplash.com/photo-1602276507033-1bcec514e1ef?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxDaGljYWdvJTJDSUx8ZW58MHwwfHx8MTY0NjYwMTUxMg\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=200","small_s3":"https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1602276507033-1bcec514e1ef"},"links":{"self":"https://api.unsplash.com/photos/KMRFPukZxPU","html":"https://unsplash.com/photos/KMRFPukZxPU","download":"https://unsplash.com/photos/KMRFPukZxPU/download?ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxDaGljYWdvJTJDSUx8ZW58MHwwfHx8MTY0NjYwMTUxMg","download_location":"https://api.unsplash.com/photos/KMRFPukZxPU/download?ixid=MnwzMDc4Mzh8MHwxfHNlYXJjaHwxfHxDaGljYWdvJTJDSUx8ZW58MHwwfHx8MTY0NjYwMTUxMg"},"categories":[],"likes":5,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"topic_submissions":{"architecture":{"status":"rejected"}},"user":{"id":"dmX2HVDqSsQ","updated_at":"2022-03-06T06:56:18-05:00","username":"drench777","name":"Dylan
+        LaPierre","first_name":"Dylan","last_name":"LaPierre","twitter_username":null,"portfolio_url":null,"bio":null,"location":"Chicago
+        ","links":{"self":"https://api.unsplash.com/users/drench777","html":"https://unsplash.com/@drench777","photos":"https://api.unsplash.com/users/drench777/photos","likes":"https://api.unsplash.com/users/drench777/likes","portfolio":"https://api.unsplash.com/users/drench777/portfolio","following":"https://api.unsplash.com/users/drench777/following","followers":"https://api.unsplash.com/users/drench777/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1602276888280-5bdf9bc71daeimage?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-1602276888280-5bdf9bc71daeimage?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-1602276888280-5bdf9bc71daeimage?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":"dlp.official_","total_collections":0,"total_likes":127,"total_photos":99,"accepted_tos":true,"for_hire":false,"social":{"instagram_username":"dlp.official_","portfolio_url":null,"twitter_username":null,"paypal_email":null}},"tags":[{"type":"landing_page","title":"chicago","source":{"ancestry":{"type":{"slug":"wallpapers","pretty_slug":"HD
+        Wallpapers"},"category":{"slug":"travel","pretty_slug":"Travel"},"subcategory":{"slug":"chicago","pretty_slug":"Chicago"}},"title":"HD
+        Chicago Wallpapers","subtitle":"Download Free Chicago Wallpapers","description":"Choose
+        from a curated selection of Chicago wallpapers for your mobile and desktop
+        screens. Always free on Unsplash.","meta_title":"Chicago Wallpapers: Free
+        HD Download [500+ HQ] | Unsplash","meta_description":"Choose from hundreds
+        of free Chicago wallpapers. Download HD wallpapers for free on Unsplash.","cover_photo":{"id":"Nyvq2juw4_o","created_at":"2016-10-31T20:26:28-04:00","updated_at":"2022-03-04T10:01:04-05:00","promoted_at":"2016-10-31T20:26:28-04:00","width":3465,"height":2131,"color":"#0c2640","blur_hash":"LhEMa,W=WVWW_4kBjtW=?bkBaefR","description":"City
+        architecture and skyscrapers near waterfront","alt_description":"white and
+        brown city buildings during daytime","urls":{"raw":"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1\u0026q=85\u0026fm=jpg\u0026crop=entropy\u0026cs=srgb","regular":"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max","small":"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=400\u0026fit=max","thumb":"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=200\u0026fit=max","small_s3":"https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1477959858617-67f85cf4f1df"},"links":{"self":"https://api.unsplash.com/photos/Nyvq2juw4_o","html":"https://unsplash.com/photos/Nyvq2juw4_o","download":"https://unsplash.com/photos/Nyvq2juw4_o/download","download_location":"https://api.unsplash.com/photos/Nyvq2juw4_o/download"},"categories":[],"likes":2844,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"topic_submissions":{},"user":{"id":"1--L3vNK0TA","updated_at":"2022-03-04T17:19:49-05:00","username":"peterlaster","name":"Pedro
+        Lastra","first_name":"Pedro","last_name":"Lastra","twitter_username":null,"portfolio_url":"https://www.flickr.com/photos/lastingimages/","bio":null,"location":null,"links":{"self":"https://api.unsplash.com/users/peterlaster","html":"https://unsplash.com/@peterlaster","photos":"https://api.unsplash.com/users/peterlaster/photos","likes":"https://api.unsplash.com/users/peterlaster/likes","portfolio":"https://api.unsplash.com/users/peterlaster/portfolio","following":"https://api.unsplash.com/users/peterlaster/following","followers":"https://api.unsplash.com/users/peterlaster/followers"},"profile_image":{"small":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":null,"total_collections":10,"total_likes":46,"total_photos":86,"accepted_tos":false,"for_hire":false,"social":{"instagram_username":null,"portfolio_url":"https://www.flickr.com/photos/lastingimages/","twitter_username":null,"paypal_email":null}}}}},{"type":"search","title":"il"},{"type":"search","title":"usa"}]}]}'
+  recorded_at: Sun, 06 Mar 2022 21:33:31 GMT
+recorded_with: VCR 6.0.0

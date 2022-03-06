@@ -1,15 +1,19 @@
 # app/facades/forecast_facade.rb
 class ForecastFacade
   def self.get_searched_forecast(location)
-    @api_forecast = ForecastService.forecast_data(location)
+    get_forecast_data(location)
 
     attributes = {
       current_weather: current_weather,
       daily_weather: daily_weather,
       hourly_weather: hourly_weather
     }
-
+    
     Forecast.new(attributes)
+  end
+
+  def self.get_forecast_data(location)
+    @api_forecast = ForecastService.forecast_data(location)
   end
 
   def self.current_weather

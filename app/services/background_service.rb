@@ -7,7 +7,7 @@ class BackgroundService
   end
 
   def self.background_image(query)
-    return 'Unable to access Upsplash API.' if background_connection.class != Faraday::Connection
+    return 'Unable to access Unsplash API.' if background_connection.class != Faraday::Connection
 
     response = background_connection.get('search/photos') do |request|
       request.params['client_id'] = ENV['unsplash_api_key']

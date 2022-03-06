@@ -8,7 +8,7 @@ RSpec.describe BackgroundFacade do
   end
 
   context 'helper method' do
-    it '::get_image_data' do
+    it '::get_image_data', :vcr do
       data = BackgroundFacade.get_image_data('Chicago,IL')
       expect(data).to be_a(Hash)
     end

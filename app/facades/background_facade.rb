@@ -1,17 +1,17 @@
 # app/facades/background_facade.rb
 class BackgroundFacade
-  def self.get_image_data(query)
-    BackgroundService.background_image(query)
+  def self.get_image_data(location)
+    BackgroundService.background_image(location)
   end
 
-  def self.background(query)
-    data = get_image_data(query)[:results][0]
+  def self.background(location)
+    data = get_image_data(location)[:results][0]
 
     attributes = {
       'image': {
         'id': data[:id],
         'description': data[:description],
-        'location': query,
+        'location': location,
         'urls': data[:urls],
         'credit': {
           'username': data[:user][:username],

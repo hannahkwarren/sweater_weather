@@ -32,7 +32,7 @@ RSpec.describe BackgroundService do
     it 'returns message if no response from Upsplash' do
       allow(BackgroundService).to receive(:background_connection).and_return(double(Faraday::Response, status: 500, success?: false))
 
-      expect(BackgroundService.background_image('Pittsburgh,PA')).to eq('Unable to access Upsplash API.')
+      expect(BackgroundService.background_image('Pittsburgh,PA')).to eq('Unable to access Unsplash API.')
     end
   end
 end
