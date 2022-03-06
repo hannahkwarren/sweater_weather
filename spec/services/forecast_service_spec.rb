@@ -2,23 +2,15 @@
 require 'rails_helper'
 
 RSpec.describe 'Forecast Service' do
-  it 'returns latitude and longitude data from Mapquest Geocoding API' do
-    location_data = ForecastService.latitude_and_longitude('Washington,DC')
-    expect(location_data).to be_a Hash
-    expect(location_data).to have_key(:results)
-    expect(location_data[:results]).to be_an Array
-    expect(location_data[:results][0]).to be_a Hash
-    expect(location_data[:results][0][:locations]).to be_an Array
-    expect(location_data[:results][0][:locations][0]).to be_an Hash
-    expect(location_data[:results][0][:locations][0][:latLng]).to be_an Hash
-    expect(location_data[:results][0][:locations][0][:latLng]).to have_key(:lat)
-    expect(location_data[:results][0][:locations][0][:latLng]).to have_key(:lng)
-    # response[:results][0][:locations][0][:latLng]
-  end
+  context 'happy path, main use case' do
+    it 'can establish a Faraday connection with the Mapquest API' do
+      conn = ForecastService.maps_connection
+      expect(conn).to be_a(Faraday::Connection)
+    end
 
-  context 'edge case' do
-    it 'returns latitude and longitude data even when location is typed strangely' do
-      location_data = ForecastService.latitude_and_longitude('newyORK,ny')
+    it 'returns location data from Mapquest Geocoding API' do
+      location_data = ForecastService.geocoding_data('Washington,DC')
+
       expect(location_data).to be_a Hash
       expect(location_data).to have_key(:results)
       expect(location_data[:results]).to be_an Array
@@ -28,9 +20,30 @@ RSpec.describe 'Forecast Service' do
       expect(location_data[:results][0][:locations][0][:latLng]).to be_an Hash
       expect(location_data[:results][0][:locations][0][:latLng]).to have_key(:lat)
       expect(location_data[:results][0][:locations][0][:latLng]).to have_key(:lng)
-      # response[:results][0][:locations][0][:latLng]
+    end
+
+    it 'can parse latitude and longitude from location data' do
+      lat_long = ForecastService.parse_lat_lon('Washington,DC')
+
+      expect(lat_long).to be_a Hash
+      expect(lat_long).to have_key(:lat)
+      expect(lat_long).to have_key(:lon)
+    end
+
+    it 'can establish a Faraday connection with the OpenWeather API' do
+      conn = ForecastService.weather_connection
+      expect(conn).to be_a(Faraday::Connection)
+    end
+
+    it 'can get weather data from OpenWeather API' do
+      loc = { :lat => 38.8920, :lon => -77.0199 }
+      nyc_weather = ForecastService.forecast_data('Pittsburgh,PA')
+
+      expect(nyc_weather).to be_a Hash
+      expect(nyc_weather)
     end
   end
+  
 end
 
 # {

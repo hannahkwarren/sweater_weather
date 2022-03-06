@@ -6,11 +6,37 @@ class ForecastService
     end
   end
 
-  def self.latitude_and_longitude(location)
-    location_data = maps_connection.get('address') do |faraday|
-      faraday.params['key'] = ENV['mapquest_api_key']
-      faraday.params['location'] = location
+  def self.geocoding_data(location)
+    location_data = maps_connection.get('address') do |request|
+      request.params['key'] = ENV['mapquest_api_key']
+      request.params['location'] = location
     end
+
     JSON.parse(location_data.body, symbolize_names: true)
+  end
+  
+  def self.parse_lat_lon(location)
+    data = geocoding_data(location)
+    { lat: data[:results][0][:locations][0][:latLng][:lat],
+      lon: data[:results][0][:locations][0][:latLng][:lng] }
+  end
+
+  def self.weather_connection
+    Faraday.new(url: 'https://api.openweathermap.org/data/2.5/') do |faraday|
+      faraday.params['appid'] = ENV['weather_api_key']
+    end
+  end
+
+  def self.forecast_data(location)
+    loc = parse_lat_lon(location)
+
+    forecast = weather_connection.get('onecall') do |request|
+      request.params['appid'] = ENV['weather_api_key']
+      request.params['lat'] = loc[:lat]
+      request.params['lon'] = loc[:lon]
+      request.params['exclude'] = 'minutely,alerts'
+    end
+
+    JSON.parse(forecast.body, symbolize_names: true)
   end
 end
