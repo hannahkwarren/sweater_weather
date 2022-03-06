@@ -2,12 +2,19 @@
 require 'rails_helper'
 
 RSpec.describe 'Forecast Service' do
-  context 'happy path, main use case' do
+  context 'happy path, Faraday connections' do
     it 'can establish a Faraday connection with the Mapquest API' do
       conn = ForecastService.maps_connection
       expect(conn).to be_a(Faraday::Connection)
     end
 
+    it 'can establish a Faraday connection with the OpenWeather API' do
+      conn = ForecastService.weather_connection
+      expect(conn).to be_a(Faraday::Connection)
+    end
+  end
+
+  context 'happy path, main use case' do
     it 'returns location data from Mapquest Geocoding API' do
       location_data = ForecastService.geocoding_data('Washington,DC')
 
@@ -30,13 +37,7 @@ RSpec.describe 'Forecast Service' do
       expect(lat_long).to have_key(:lon)
     end
 
-    it 'can establish a Faraday connection with the OpenWeather API' do
-      conn = ForecastService.weather_connection
-      expect(conn).to be_a(Faraday::Connection)
-    end
-
     it 'can get weather data from OpenWeather API' do
-      loc = { :lat => 38.8920, :lon => -77.0199 }
       nyc_weather = ForecastService.forecast_data('Pittsburgh,PA')
 
       expect(nyc_weather).to be_a Hash
@@ -45,46 +46,16 @@ RSpec.describe 'Forecast Service' do
   end
 
   context 'sad path - external APIs down' do
-    it "returns message if there's an external API outage" do
+    it 'returns message if the MapQuest API experiences an outage' do
       allow(ForecastService).to receive(:maps_connection).and_return(double(Faraday::Response, status: 500, success?: false))
 
       expect(ForecastService.geocoding_data('Pittsburgh,pa')).to eq('Unable to access MapQuest Geocoding API.')
     end
 
-    it "returns message if there's an external API outage" do
+    it 'returns message if the OpenWeather API experiences an outage' do
       allow(ForecastService).to receive(:weather_connection).and_return(double(Faraday::Response, status: 500, success?: false))
 
       expect(ForecastService.forecast_data('Pittsburgh,pa')).to eq('Unable to access OpenWeather API.')
     end
   end
 end
-
-# {
-#   "data": {
-#     "id": null,
-#     "type": "forecast",
-#     "attributes": {
-#       "current_weather": {
-#         "datetime": "2020-09-30 13:27:03 -0600",
-#         "temperature": 79.4,
-#         etc
-#       },
-#       "daily_weather": [
-#         {
-#           "date": "2020-10-01",
-#           "sunrise": "2020-10-01 06:10:43 -0600",
-#           etc
-#         },
-#         {...} etc
-#       ],
-#       "hourly_weather": [
-#         {
-#           "time": "14:00:00",
-#           "conditions": "cloudy with a chance of meatballs",
-#           etc
-#         },
-#         {...} etc
-#       ]
-#     }
-#   }
-# }
