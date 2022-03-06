@@ -27,4 +27,12 @@ RSpec.describe BackgroundService do
       expect(pic[:results][0][:user]).to be_a(Hash)
     end
   end
+
+  context 'Sad Path: Upsplash outage' do
+    it 'returns message if no response from Upsplash' do
+      allow(BackgroundService).to receive(:background_connection).and_return(double(Faraday::Response, status: 500, success?: false))
+
+      expect(BackgroundService.background_image('Pittsburgh,PA')).to eq('Unable to access Upsplash API.')
+    end
+  end
 end
