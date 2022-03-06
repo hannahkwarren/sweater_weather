@@ -19,5 +19,4 @@ RSpec.describe 'Forecast API' do
     expect(data).to have_key(:hourly_weather)
     expect(data[:hourly_weather][0][:temp]).to eq(24.33)
   end
-
 end
