@@ -8,7 +8,6 @@ class ForecastService
   end
 
   def self.geocoding_data(location)
-    
     return 'Unable to access MapQuest Geocoding API.' if maps_connection.class != Faraday::Connection
 
     location_data = maps_connection.get('address') do |request|

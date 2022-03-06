@@ -1,7 +1,7 @@
 # app/spec/services/forecast_service_spec.rb
 require 'rails_helper'
 
-RSpec.describe 'Forecast Service' do
+RSpec.describe ForecastService do
   context 'happy path, Faraday connections' do
     it 'can establish a Faraday connection with the Mapquest API' do
       conn = ForecastService.maps_connection
