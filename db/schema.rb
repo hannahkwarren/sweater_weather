@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_06_234057) do
+ActiveRecord::Schema.define(version: 2022_03_07_042704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2022_03_06_234057) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
+    t.text "private_api_key_ciphertext"
+    t.string "private_api_key_bidx"
+    t.index ["private_api_key_bidx"], name: "index_users_on_private_api_key_bidx", unique: true
   end
 
 end
