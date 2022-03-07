@@ -3,18 +3,15 @@
 ![languages](https://img.shields.io/github/languages/top/cuisine-odyssey/frontend_application?color=red)
 ![PRs](https://img.shields.io/github/issues-pr-closed/cuisine-odyssey/frontend_application)
 ![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)
-![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/contributors-6-orange.svg?style=flat)](#contributors-)
+![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov) 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/contributors-1-orange.svg?style=flat)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
 ## Background and Description
 
 "Sweater Weather" is a solo project undertaken during Module 3 of Turing School of Software and Design's Backend Engineering program.
-
-Home Page
-![Screen Shot 2022-03-04 at 11 04 39 AM](https://user-images.githubusercontent.com/90224504/156797954-6f9caba9-2ab6-4650-98d9-db4c37339c9d.png)
-
 
 ## Learning Goals
 
