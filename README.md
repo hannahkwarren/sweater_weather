@@ -12,10 +12,6 @@
 
 "Sweater Weather" is a solo project undertaken during Module 3 of Turing School of Software and Design's Backend Engineering program.
 
-Home Page
-![Screen Shot 2022-03-04 at 11 04 39 AM](https://user-images.githubusercontent.com/90224504/156797954-6f9caba9-2ab6-4650-98d9-db4c37339c9d.png)
-
-
 ## Learning Goals
 
 - Expose an API that aggregates data from multiple external APIs
