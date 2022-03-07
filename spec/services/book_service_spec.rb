@@ -4,14 +4,14 @@ require 'rails_helper'
 
 RSpec.describe BookService do
   context 'connection' do
-    it 'can connect with the Books API' do
+    it 'can connect with the Books API', :vcr do
       conn = BookService.book_connection
       expect(conn).to be_a(Faraday::Connection)
     end
   end
 
   context 'class methods' do
-    it '::get_books' do
+    it '::get_books', :vcr do
       response = BookService.get_books('Pittsburgh', 5)
 
       expect(response).to be_a(Hash)

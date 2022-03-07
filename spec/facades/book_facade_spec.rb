@@ -16,5 +16,10 @@ RSpec.describe BookFacade do
     expect(books_response).to be_a Hash
     expect(books_response[:books]).to be_an Array
     expect(books_response[:books].count).to eq(7)
+
+    expect(books_response[:books][0]).to_not have_key(:key)
+    expect(books_response[:books][0]).to_not have_key(:type)
+    expect(books_response[:books][0]).to_not have_key(:seed)
+    expect(books_response[:books][0]).to_not have_key(:last_modified_i)
   end
 end
