@@ -1,7 +1,5 @@
 # spec/services/book_service_spec.rb
-
 require 'rails_helper'
-
 RSpec.describe BookService do
   context 'connection' do
     it 'can connect with the Books API', :vcr do
@@ -31,9 +29,18 @@ RSpec.describe BookService do
       expect(response).to eq('Quantity must be a positive integer, provided this way: "&quantity=5"')
     end
 
-    it '::get_books fails with a quantity string' do 
+    it '::get_books fails with a quantity string' do
       response = BookService.get_books('Pittsburgh', 'five')
       expect(response).to eq('Quantity must be an integer, provided this way: "&quantity=5"')
     end
   end
+
+  context 'sad path: books external api is down' do 
+    it 'returns message if Open Library is down' do 
+      allow(BookService).to receive(:book_connection).and_return(double(Faraday::Response, status: 500, success?: false))
+
+      expect(BookService.get_books('Pittsburgh', 5)).to eq('Unable to access Open Library API')
+    end
+  end
+
 end

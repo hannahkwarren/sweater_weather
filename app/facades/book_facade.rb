@@ -3,11 +3,10 @@ class BookFacade
   def self.location_books(location, quantity)
     @parsed_json = get_books_data(location, quantity)
 
-    x = { destination: location,
-          forecast: current_forecast_data(location),
-          total_books_found: @parsed_json[:numFound],
-          books: books_only_wanted_fields }
-            # binding.pry
+    { destination: location,
+      forecast: current_forecast_data(location),
+      total_books_found: @parsed_json[:numFound],
+      books: books_only_wanted_fields }
   end
 
   def self.get_books_data(location, quantity)
