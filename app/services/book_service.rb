@@ -5,6 +5,12 @@ class BookService
   end
 
   def self.get_books(location, quantity)
+    if quantity.class != Integer
+      return 'Quantity must be an integer, provided this way: "&quantity=5"'
+    elsif quantity.negative?
+      return 'Quantity must be a positive integer, provided this way: "&quantity=5"'
+    end
+    
     response = book_connection.get('/search.json') do |request|
       request.params['q'] = location
       request.params['subject'] = 'travel'

@@ -11,8 +11,6 @@ class BookFacade
   end
 
   def self.get_books_data(location, quantity)
-    # if quantity.class != Integer
-    # end
     BookService.get_books(location, quantity)
   end
 

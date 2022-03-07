@@ -24,4 +24,16 @@ RSpec.describe BookService do
       expect(response[:docs][0]).to have_key(:publisher)
     end
   end
+
+  context 'sad path: user provides invalid quantity' do
+    it '::get_books fails with a negative quantity' do
+      response = BookService.get_books('Pittsburgh', -9)
+      expect(response).to eq('Quantity must be a positive integer, provided this way: "&quantity=5"')
+    end
+
+    it '::get_books fails with a quantity string' do 
+      response = BookService.get_books('Pittsburgh', 'five')
+      expect(response).to eq('Quantity must be an integer, provided this way: "&quantity=5"')
+    end
+  end
 end
