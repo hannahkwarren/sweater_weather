@@ -25,6 +25,6 @@ RSpec.describe 'Sessions endpoint' do
     json_payload = { "email": "whatever@mail.com", "password": "pass"}
     post '/api/v1/sessions', params: json_payload
 
-    expect(response).to_have http_status(401)
+    expect(response).to have_http_status(401)
   end
 end

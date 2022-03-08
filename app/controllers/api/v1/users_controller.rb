@@ -19,7 +19,7 @@ class Api::V1::UsersController < ApplicationController
       session[:user_id] = user.id
       render json: UserSerializer.new(user)
     else
-      render json: { error: { message: "Invalid credentials." } } , status: 401
+      render json: { error: { message: 'Invalid credentials.' } }, status: 401
     end
   end
 

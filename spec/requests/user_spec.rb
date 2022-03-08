@@ -24,14 +24,14 @@ RSpec.describe 'User Registration' do
 
   context 'sad path: raises any validation errors at attempted creation' do
     it 'raises taken error if a user already exists' do
-      user1 = User.create(email: 'whatever@mail.com', password: 'Pass1234', password_confirmation: 'Pass1234')
+      User.create(email: 'whatever@mail.com', password: 'Pass1234', password_confirmation: 'Pass1234')
 
       json_payload = { user: {
         email: 'whatever@mail.com',
         password: 'password',
         password_confirmation: 'password'
       } }
-      
+
       post '/api/v1/users', params: json_payload
       parsed = JSON.parse(response.body, symbolize_names: true)
       

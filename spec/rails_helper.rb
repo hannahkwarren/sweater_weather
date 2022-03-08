@@ -76,4 +76,7 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   # config.default_cassette_options = { re_record_interval: 7.days}
   config.allow_http_connections_when_no_cassette = true
+  config.filter_sensitive_data('<MAPQUEST_API_KEY>') { ENV['mapquest_api_key'] }
+  config.filter_sensitive_data('<OPEN_WEATHER_API_KEY') { ENV['weather_api_key'] }
+  config.filter_sensitive_data('<UNSPLASH_API_KEY') { ENV['unsplash_api_key'] }
 end

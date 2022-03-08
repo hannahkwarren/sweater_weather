@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://www.mapquestapi.com/directions/v2/routematrix?from=Denver,%20CO&key=<MAPQUEST_API_KEY>&to=Los%20Angeles,%20CA
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 08 Mar 2022 22:52:45 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1146'
+      Set-Cookie:
+      - JSESSIONID=C0F3D3D9F34FDA414AC0479DC7E63435; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Tue, 08 Mar 2022 22:52:45 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhbGxUb0FsbCI6ZmFsc2UsImRpc3RhbmNlIjpbMCwxMDE3LjcxNV0sImxvY2F0aW9ucyI6W3siZHJhZ1BvaW50IjpmYWxzZSwiZGlzcGxheUxhdExuZyI6eyJsbmciOi0xMDQuOTg0ODUzLCJsYXQiOjM5LjczODQ1M30sImFkbWluQXJlYTQiOiJEZW52ZXIgQ291bnR5IiwiYWRtaW5BcmVhNSI6IkRlbnZlciIsInBvc3RhbENvZGUiOiIiLCJhZG1pbkFyZWExIjoiVVMiLCJhZG1pbkFyZWEzIjoiQ08iLCJ0eXBlIjoicyIsInNpZGVPZlN0cmVldCI6Ik4iLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJBNVhBWCIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwibGlua0lkIjoyODIwNDEwOTAsInN0cmVldCI6IiIsImFkbWluQXJlYTVUeXBlIjoiQ2l0eSIsImdlb2NvZGVRdWFsaXR5IjoiQ0lUWSIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsImFkbWluQXJlYTNUeXBlIjoiU3RhdGUiLCJsYXRMbmciOnsibG5nIjotMTA0Ljk4NDg1MywibGF0IjozOS43Mzg0NTN9fSx7ImRyYWdQb2ludCI6ZmFsc2UsImRpc3BsYXlMYXRMbmciOnsibG5nIjotMTE4LjI0MzM0NCwibGF0IjozNC4wNTIyMzh9LCJhZG1pbkFyZWE0IjoiTG9zIEFuZ2VsZXMgQ291bnR5IiwiYWRtaW5BcmVhNSI6IkxvcyBBbmdlbGVzIiwicG9zdGFsQ29kZSI6IiIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTMiOiJDQSIsInR5cGUiOiJzIiwic2lkZU9mU3RyZWV0IjoiTiIsImdlb2NvZGVRdWFsaXR5Q29kZSI6IkE1WEFYIiwiYWRtaW5BcmVhNFR5cGUiOiJDb3VudHkiLCJsaW5rSWQiOjI4MjAzOTg5OSwic3RyZWV0IjoiIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiZ2VvY29kZVF1YWxpdHkiOiJDSVRZIiwiYWRtaW5BcmVhMVR5cGUiOiJDb3VudHJ5IiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImxhdExuZyI6eyJsbmciOi0xMTguMjQzMzQ0LCJsYXQiOjM0LjA1MjIzOH19XSwidGltZSI6WzAsNTI1NzRdLCJtYW55VG9PbmUiOmZhbHNlLCJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX19
+  recorded_at: Tue, 08 Mar 2022 22:52:45 GMT
+recorded_with: VCR 6.0.0

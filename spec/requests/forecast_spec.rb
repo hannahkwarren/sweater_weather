@@ -12,11 +12,11 @@ RSpec.describe 'Forecast API' do
     data = parsed[:data][:attributes]
     
     expect(data).to have_key(:current_weather)
-    expect(data[:current_weather][:temp]).to eq(23.99)
+    expect(data[:current_weather][:temp]).to eq(35.29)
     expect(data).to have_key(:daily_weather)
-    expect(data[:daily_weather][0][:max_temp]).to eq(30.79)
-    expect(data[:daily_weather][0][:min_temp]).to eq(19.2)
+    expect(data[:daily_weather][0][:max_temp]).to eq(28.31)
+    expect(data[:daily_weather][0][:min_temp]).to eq(16.97)
     expect(data).to have_key(:hourly_weather)
-    expect(data[:hourly_weather][0][:temp]).to eq(24.33)
+    expect(data[:hourly_weather][0][:temp]).to eq(35.29)
   end
 end
