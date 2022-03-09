@@ -38,11 +38,13 @@ class RoadTripFacade
 
     return roadtrip_cannot_compute unless roadtrip_data(origin, destination).instance_of? Hash
 
-    {
+    attributes = {
       start_city: origin,
       end_city: destination,
       travel_time: @impt_data[:travel_time],
       weather_at_eta: weather_at_eta
     }
+    
+    RoadTrip.new(attributes)
   end
 end

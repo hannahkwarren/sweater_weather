@@ -4,7 +4,7 @@ class Api::V1::UsersController < ApplicationController
     user = user_params
     user[:email] = user[:email].downcase
     new_user = User.create(user)
-    
+
     if new_user.save
       render json: UserSerializer.new(new_user)
     else
@@ -14,10 +14,14 @@ class Api::V1::UsersController < ApplicationController
 
   def login
     user = User.find_by(email: params[:email])
-    # binding.pry
-    if user.authenticate(params[:password])
-      session[:user_id] = user.id
-      render json: UserSerializer.new(user)
+
+    if user.present?
+      if user.authenticate(params[:password])
+        session[:user_id] = user.id
+        render json: UserSerializer.new(user)
+      else
+        render json: { error: { message: 'Invalid credentials.' } }, status: 401
+      end
     else
       render json: { error: { message: 'Invalid credentials.' } }, status: 401
     end

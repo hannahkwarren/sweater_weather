@@ -16,4 +16,3 @@ class User < ApplicationRecord
     self.private_api_key = SecureRandom.hex if self.private_api_key.nil?
   end
 end
-# 
