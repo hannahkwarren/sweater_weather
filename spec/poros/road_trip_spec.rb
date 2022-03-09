@@ -5,7 +5,7 @@ RSpec.describe RoadTrip do
     attributes = {
       start_city: 'Denver, CO',
       end_city: 'Boulder, CO',
-      travel_time: 2240, 
+      travel_time: 2240,
       weather_at_eta: 'snow and sleet'
     }
 

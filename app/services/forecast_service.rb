@@ -46,4 +46,15 @@ class ForecastService
 
     JSON.parse(forecast.body, symbolize_names: true)
   end
+
+  def self.hourly_forecast_only(lat, lon)
+    hourly = weather_connection.get('onecall') do |request|
+      request.params['appid'] = ENV['weather_api_key']
+      request.params['lat'] = lat
+      request.params['lon'] = lon
+      request.params['exclude'] = 'current,daily,minutely,alerts'
+      request.params['units'] = 'imperial'
+    end
+    JSON.parse(hourly.body, symbolize_names: true)
+  end
 end

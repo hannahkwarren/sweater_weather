@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Road Trip endpoint' do
   context 'happy path: shorter road trip' do
     it 'can provide a travel time and weather upon arrival' do
-
+      
 
     end
   end
