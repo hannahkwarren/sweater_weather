@@ -37,22 +37,16 @@
 - jsonapi-serialize
 - Figaro
 - Webmock
+- VCR
 - jquery-rails
 - rspec_junit_formatter
 - Orderly
-- dotenv-rails
+- Lockbox
+- Blind Index
 
 ## Setup
 1. Clone this repository:
-On your local machine open a terminal session and enter the following commands for SSH or HTTPS to clone the repositiory.
-
-
-- using ssh key <br>
-```shell
-$ git clone git@github.com:hannahkwarren/sweater_weather.git
-```
-
-Once cloned, you'll have a new local copy in the directory you ran the clone command in.
+On your local machine open a terminal session and clone the repositiory. Once cloned, you'll have a new local copy in the directory you ran the clone command in.
 
 2. Change to the project directory:<br>
 In terminal, use `$cd` to navigate to the Frontend Application project directory.
@@ -68,7 +62,7 @@ In terminal, use Bundler to install any missing Gems. If Bundler is not installe
 $ gem install bundler
 ```
 
-If Bundler is already installed or after it has been installed, run the following command.
+If Bundler is already installed or after it has been installed, run:
 
 ```shell
 $ bundle install
@@ -164,18 +158,17 @@ $ rails db: {:drop, :create, :migrate, :seed}
 ```shell
 $ bundle exec figaro install
 ```
-This will create a hidden file called application.yml. In this file you will need to set up a OAuth client_id and client_secret from your OAuth provider. We chose to use Google OAuth, feel free to use which ever provider you would like or alternativley use BCrypt. If BCrypt is used function for password on views and password digest will need to be added into the db migration, views and models.
+This will create a hidden file called application.yml. You will need to sign up for three API keys to run this project: 
+- [Mapquest Geocode and Directions API](https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register)
+- [OpenWeather API](https://home.openweathermap.org/users/sign_up)
+- [Unsplash API](https://unsplash.com/oauth/applications)
 
-6. Add backend connection in application.yml to set up a local variable for your endpoints if you choose to deploy outside of localhost.<br>
-
-```shell
-BACKEND_CONNECTION: http://localhost:3000/api/v1/ 
-```
-
-7. Visit https://www.themealdb.com/api.php to sign up for an API key, the API key you recieve will work for both TheMealDB and TheCocktailDB https://www.thecocktaildb.com/api.php add this in application.yml <br>
+6. Add all three keys to your application.yml to set up a local variable for your endpoints if you choose to deploy outside of localhost.<br>
 
 ```shell
-EXTERNAL_API_KEY: api_key_goes_here
+mapquest_api_key: <insert_your_key_here>
+weather_api_key: <insert_your_key_here>
+unsplash_api_key: <insert_your_key_here>
 ```
 
 8. Startup and Access<br>
@@ -185,11 +178,44 @@ Finally, in order to use the web app you will have to start the server locally a
 $ rails s
 ```
 
-- Open web browser and visit link
-    http://localhost:5000/
-    
-At this point you should be taken to the welcome page of the web-app. If you encounter any errors or have not reached the web-app please confirm you followed the steps above and that your environment is properly set up.
+9. Go to town! 
+Use Postman, curl, or another tool of your choice to make a request to http://localhost:3000/api/v1
 
+### Supported Endpoints
+ 
+GET `/forecast?location=NewYork,NY` provides a current forecast, daily forecast for the next 5 days, and hourly forecast for the next 8 hours at a given location.
+
+GET `/background?location=NewYork,NY` provides a single image, via the Unsplash API, tagged or titled with the provided location.
+
+POST `/users` adds a user to the database given a valid and unique email, and matching password and password confirmation. Params must be provided in the body of the request in JSON format. Here's an example hash:
+
+```
+{
+    "user": {
+        "email": "example@mail.com",
+        "password": "mypassword",
+        "password_confirmation": "mypassword"
+    }
+}
+```
+
+POST `/sessions` logs in a user given email and password, provided as JSON in the request body. 
+
+```
+{
+    "email": "example@mail.com",
+    "password": "mypassword"
+}
+```
+
+POST `/road_trip` compiles travel time and weather forecast at projected arrival time for a roadtrip (nonstop) between origin and destination. Requires a valid api_key. Your params must again be JSON in the request body:
+```
+{
+  "origin": "New York, NY",
+  "destination": "Burlington, VT",
+  "api_key": "your_key_goes_here"
+}
+```
 
 
 ## **Contributors** ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
