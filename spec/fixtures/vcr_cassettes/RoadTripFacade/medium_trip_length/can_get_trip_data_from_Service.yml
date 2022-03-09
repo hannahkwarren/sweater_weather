@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://www.mapquestapi.com/directions/v2/routematrix?from=Pittsburgh,%20PA&key=<MAPQUEST_API_KEY>&to=Philadelphia,%20PA
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 09 Mar 2022 17:23:56 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1148'
+      Set-Cookie:
+      - JSESSIONID=C3CB7496DBEC39C16807397CEE20AE6C; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Wed, 09 Mar 2022 17:23:56 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhbGxUb0FsbCI6ZmFsc2UsImRpc3RhbmNlIjpbMCwzMDQuNjgyXSwibG9jYXRpb25zIjpbeyJkcmFnUG9pbnQiOmZhbHNlLCJkaXNwbGF5TGF0TG5nIjp7ImxuZyI6LTc5Ljk5NDk0NSwibGF0Ijo0MC40NDIxNjl9LCJhZG1pbkFyZWE0IjoiQWxsZWdoZW55IENvdW50eSIsImFkbWluQXJlYTUiOiJQaXR0c2J1cmdoIiwicG9zdGFsQ29kZSI6IiIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTMiOiJQQSIsInR5cGUiOiJzIiwic2lkZU9mU3RyZWV0IjoiTiIsImdlb2NvZGVRdWFsaXR5Q29kZSI6IkE1WEFYIiwiYWRtaW5BcmVhNFR5cGUiOiJDb3VudHkiLCJsaW5rSWQiOjI4MjAzOTc4MCwic3RyZWV0IjoiIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiZ2VvY29kZVF1YWxpdHkiOiJDSVRZIiwiYWRtaW5BcmVhMVR5cGUiOiJDb3VudHJ5IiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImxhdExuZyI6eyJsbmciOi03OS45OTQ5NDUsImxhdCI6NDAuNDQyMTY5fX0seyJkcmFnUG9pbnQiOmZhbHNlLCJkaXNwbGF5TGF0TG5nIjp7ImxuZyI6LTc1LjE2NTYyLCJsYXQiOjM5Ljk1MTA2MX0sImFkbWluQXJlYTQiOiJQaGlsYWRlbHBoaWEgQ291bnR5IiwiYWRtaW5BcmVhNSI6IlBoaWxhZGVscGhpYSIsInBvc3RhbENvZGUiOiIiLCJhZG1pbkFyZWExIjoiVVMiLCJhZG1pbkFyZWEzIjoiUEEiLCJ0eXBlIjoicyIsInNpZGVPZlN0cmVldCI6Ik4iLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJBNVhBWCIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwibGlua0lkIjoyODIwMzk1MjAsInN0cmVldCI6IiIsImFkbWluQXJlYTVUeXBlIjoiQ2l0eSIsImdlb2NvZGVRdWFsaXR5IjoiQ0lUWSIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsImFkbWluQXJlYTNUeXBlIjoiU3RhdGUiLCJsYXRMbmciOnsibG5nIjotNzUuMTY1NjIsImxhdCI6MzkuOTUxMDYxfX1dLCJ0aW1lIjpbMCwxNjc2Nl0sIm1hbnlUb09uZSI6ZmFsc2UsImluZm8iOnsic3RhdHVzY29kZSI6MCwiY29weXJpZ2h0Ijp7ImltYWdlQWx0VGV4dCI6IsKpIDIwMjIgTWFwUXVlc3QsIEluYy4iLCJpbWFnZVVybCI6Imh0dHA6Ly9hcGkubXFjZG4uY29tL3Jlcy9tcWxvZ28uZ2lmIiwidGV4dCI6IsKpIDIwMjIgTWFwUXVlc3QsIEluYy4ifSwibWVzc2FnZXMiOltdfX0=
+  recorded_at: Wed, 09 Mar 2022 17:23:56 GMT
+recorded_with: VCR 6.0.0
