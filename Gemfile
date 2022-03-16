@@ -44,8 +44,8 @@ group :development do
 end
 
 group :test do
-  gem 'factory_bot_rails'
-  gem 'faker'
+  # gem 'factory_bot_rails'
+  # gem 'faker'
   gem 'launchy'
   gem 'orderly'
   gem 'shoulda-matchers', '~> 3.1'
@@ -61,4 +61,4 @@ gem "lockbox", "~> 0.6.8"
 
 gem "blind_index", "~> 2.3"
 
-gem 'httparty'
+# gem 'httparty'

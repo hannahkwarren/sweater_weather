@@ -25,6 +25,9 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      mapquest_api_key: ${{ secrets.MAPQUEST_API_KEY }}
+      unsplash_api_key: ${{ secrets.UNSPLASH_API_KEY }}
+      weather_api_key: ${{ secrets.WEATHER_API_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
