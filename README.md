@@ -94,6 +94,7 @@ mapquest_api_key: <insert_your_key_here>
 weather_api_key: <insert_your_key_here>
 unsplash_api_key: <insert_your_key_here>
 ```
+7. You will also need to install Lockbox and add a master key to your credentials.yml.enc per [the documentation](https://github.com/ankane/lockbox). When you've configured lockbox, don't forget to do a `bundle install`!
 
 8. Startup and Access<br>
 Finally, in order to use the web app you will have to start the server locally and access the app through a web browser. 
