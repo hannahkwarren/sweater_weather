@@ -28,7 +28,7 @@ jobs:
       mapquest_api_key: ${{ secrets.MAPQUEST_API_KEY }}
       unsplash_api_key: ${{ secrets.UNSPLASH_API_KEY }}
       weather_api_key: ${{ secrets.WEATHER_API_KEY }}
-      master_key: ${{ secrets.LOCKBOX_MASTER_KEY }}
+      LOCKBOX_MASTER_KEY: ${{ secrets.LOCKBOX_MASTER_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -43,20 +43,3 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e # v1.92
-        with:
-          bundler-cache: true
-      # Add or replace any other lints here
-      - name: Security audit dependencies
-        run: bin/bundler-audit --update
-      - name: Security audit application code
-        run: bin/brakeman -q -w2
-      - name: Lint Ruby files
-        run: bin/rubocop --parallel
